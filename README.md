@@ -48,3 +48,13 @@ Look up IP intelligence (geo, ASN/ISP) and security flags (proxy/VPN/Tor/hosting
 ### Get an API Key
 
 ##### Create an account at ip-check.io, then add your key as a repo/organization secret named IPCHECK_API_KEY.
+
+
+### Commit, tag, and release
+```bash
+npm install
+git add .
+git commit -m "feat: initial release of IP Check Action"
+git tag v1.0.0
+git push --tags
+```
