@@ -1,6 +1,23 @@
 name: IP Check Lookup
 description: Lookup IP intelligence (geo, ASN/ISP, proxy/VPN/Tor, threat score) via ip-check.io
 author: IP Check
+runs:
+  using: "composite"
+  steps:
+    - shell: bash
+      run: |
+        set -euo pipefail
+        BASE="${{ inputs.base-url }}"
+        if [ -n "${{ inputs.ip }}" ]; then P="/${{ inputs.ip }}"; else P="/${{ inputs.ips }}"; fi
+        URL="${BASE%/}${P}?key=${{ inputs['api-key'] }}"
+        if [ -n "${{ inputs.fields }}" ]; then URL="$URL&fields=${{ inputs.fields }}"; fi
+        RESP=$(curl -sS -H "Accept: application/json" "$URL")
+        {
+          echo "json<<EOF"
+          echo "$RESP"
+          echo "EOF"
+          echo "summary=OK"
+        } >> "$GITHUB_OUTPUT"
 branding:
   icon: globe
   color: blue
