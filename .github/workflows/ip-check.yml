@@ -31,7 +31,7 @@ jobs:
       - name: Run IP Check (bulk)
         if: ${{ github.event.inputs.mode == 'bulk' }}
         id: ipchk_bulk
-        uses: <OWNER>/<REPO>@v1
+        uses: ipcheckio/ip-check-lookup@v1
         with:
           ips: ${{ github.event.inputs.ips }}
           fields: ${{ github.event.inputs.fields }}
