@@ -7,7 +7,7 @@ async function run() {
     const ips = core.getInput('ips');
     const fields = core.getInput('fields');
     const apiKey = core.getInput('api-key', { required: true });
-    const baseUrl = core.getInput('base-url') || 'https://api.ip-check.io';
+    const baseUrl = 'https://api.ip-check.io';
 
     if (!ip && !ips) {
       core.setFailed('Provide either "ip" or "ips".');
