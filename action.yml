@@ -1,0 +1,31 @@
+name: IP Check Lookup
+description: Lookup IP intelligence (geo, ASN/ISP, proxy/VPN/Tor, threat score) via ip-check.io
+author: IP Check
+branding:
+  icon: globe
+  color: blue
+inputs:
+  ip:
+    description: Single IP to look up (IPv4 or IPv6)
+    required: false
+  ips:
+    description: Comma-separated list of IPs (max 200)
+    required: false
+  fields:
+    description: Comma-separated list of fields to include (e.g., ip,country,city,asn)
+    required: false
+  api-key:
+    description: Your ip-check.io API key (store as a secret)
+    required: true
+  base-url:
+    description: Override base URL (defaults to https://api.ip-check.io)
+    required: false
+    default: https://api.ip-check.io
+outputs:
+  json:
+    description: Raw JSON response
+  summary:
+    description: Short summary string for logs
+runs:
+  using: node20
+  main: index.js
