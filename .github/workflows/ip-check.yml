@@ -22,7 +22,7 @@ jobs:
       - name: Run IP Check (single)
         if: ${{ github.event.inputs.mode == 'single' }}
         id: ipchk_single
-        uses: ipcheckio/ip-check-action@v1   # or copy the "Use latest version" line from your Marketplace page
+        uses: ipcheckio/ip-check-action@v1.0.0   # or copy the "Use latest version" line from your Marketplace page
         with:
           ip: ${{ github.event.inputs.ip }}
           fields: ${{ github.event.inputs.fields }}
@@ -31,7 +31,7 @@ jobs:
       - name: Run IP Check (bulk)
         if: ${{ github.event.inputs.mode == 'bulk' }}
         id: ipchk_bulk
-        uses: ipcheckio/ip-check-action@v1
+        uses: ipcheckio/ip-check-action@v1.0.0
         with:
           ips: ${{ github.event.inputs.ips }}
           fields: ${{ github.event.inputs.fields }}
