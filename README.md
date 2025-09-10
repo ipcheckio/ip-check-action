@@ -12,7 +12,7 @@ Look up IP intelligence (geo, ASN/ISP) and security flags (proxy/VPN/Tor/hosting
 
 * **`ip`** — single IP (IPv4/IPv6).
 * **`ips`** — comma-separated list of IPs (max 200).
-  *Provide either `ip` or `ips`.*
+  **Provide either `ip` or `ips`.**
 * **`fields`** — comma-separated list of fields to include (optional). If omitted, **all fields** are returned.
 * **`api-key`** *(required)* — your ip-check.io API key (store as a secret).
 
@@ -124,8 +124,7 @@ Look up IP intelligence (geo, ASN/ISP) and security flags (proxy/VPN/Tor/hosting
 
 ### Get an API Key
 
-##### Create an account at ip-check.io, then add your key as a repo/organization secret named IPCHECK_API_KEY.
-
+Create an account at **ip-check.io**, then add your key as a repo/organization secret named **IPCHECK_API_KEY**.
 
 ### Errors & troubleshooting
 
