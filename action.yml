@@ -17,10 +17,6 @@ inputs:
   api-key:
     description: Your ip-check.io API key (store as a secret)
     required: true
-  base-url:
-    description: Override base URL (defaults to https://api.ip-check.io)
-    required: false
-    default: https://api.ip-check.io
 outputs:
   json:
     description: Raw JSON response
@@ -29,3 +25,4 @@ outputs:
 runs:
   using: node20
   main: dist/index.js
+
