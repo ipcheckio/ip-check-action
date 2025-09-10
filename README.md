@@ -123,9 +123,12 @@ Look up IP intelligence (geo, ASN/ISP) and security flags (proxy/VPN/Tor/hosting
 ```
 
 ### Get an API Key
+
 ##### Create an account at ip-check.io, then add your key as a repo/organization secret named IPCHECK_API_KEY.
 
+
 ### Errors & troubleshooting
+
 * If the request fails (non-2xx), the action fails the step and prints the response body in logs.
 * Ensure the secret IPCHECK_API_KEY exists and is referenced as ${{ secrets.IPCHECK_API_KEY }}.
 * If you see HTML instead of JSON, verify the base URL and that Accept: application/json is sent (the action already sets it).
